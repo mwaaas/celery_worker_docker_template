@@ -1,0 +1,9 @@
+rabbitmq:
+  image: rabbitmq:3.5.7-management
+
+app:
+  build: .
+  volumes:
+    - ./:/usr/src/app
+  links:
+    - rabbitmq:rabbitmq
